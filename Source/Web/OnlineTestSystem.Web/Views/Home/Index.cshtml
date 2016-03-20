@@ -1,0 +1,52 @@
+﻿@model ICollection<OnlineTestSystem.Web.ViewModels.Tests.TestListingModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<h1 class="text-center">Greetings! How about a TEST?</h1>
+<hr />
+
+@if (Model.Count <= 0)
+{
+    <h2 class="text-info text-center">Currently there are no tests in the system</h2>
+}
+else
+{
+    /* TODO: Fix the display for completed tests and test if they are completed!*/
+    foreach (var test in Model)
+    {
+        if (int.Parse(test.TotalQuestions) != 0)
+        {
+            if (test.Completed)
+            {
+                <div class="panel-body">
+                    <div class="col-md-4 modal-content">
+                        <h3 class="text-center">@test.Title</h3>
+                        <h4 class="text-center">@test.TotalQuestions questions.</h4>
+                        @if (test.Percentage==0)
+                        {
+                            @Html.ActionLink("You failed this test", "TakeTest", "TestEngine", new { title = test.Title }, new { @class = "btn btn-lg btn-damnger center-block disabled" })
+
+                        }
+                        else
+                        {
+                            @Html.ActionLink($"You took this test with {test.Percentage.ToString("#.##")}%", "TakeTest", "TestEngine", new { title = test.Title }, new { @class = "btn btn-lg btn-success center-block disabled" })
+                        }
+                        <br />
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="panel-body">
+                    <div class="col-md-4 modal-content">
+                        <h3 class="text-center">@test.Title</h3>
+                        <h4 class="text-center">@test.TotalQuestions questions.</h4>
+                        @Html.ActionLink("Take this test", "TakeTest", "TestEngine", new { title = test.Title }, new { @class = "btn btn-lg btn-info center-block" })
+                        <br />
+                    </div>
+                </div>
+            }
+        }
+    }
+}

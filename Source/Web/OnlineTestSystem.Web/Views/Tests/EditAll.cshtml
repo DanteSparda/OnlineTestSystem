@@ -1,0 +1,15 @@
+﻿@model ICollection<OnlineTestSystem.Web.ViewModels.Tests.TestListingModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div class="container">
+        <h2 class="text-center">Title: @item.Title</h2>
+        <h3 class="text-center">Consists of @item.TotalQuestions questions</h3>
+        @Html.ActionLink("Add question to this test", "AddQuestion", new { id = item.Id }, new { @class = "btn btn-info btn-md center-block" })
+    </div>
+    <hr />
+}

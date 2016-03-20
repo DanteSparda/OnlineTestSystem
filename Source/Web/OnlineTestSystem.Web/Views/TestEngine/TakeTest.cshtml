@@ -1,0 +1,106 @@
+﻿@model OnlineTestSystem.Web.ViewModels.Tests.TestTakingModels.TestTakingModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var CurrentQuestion = Model.Questions[Model.QuestionNumber - 1];
+}
+
+<br />
+<h2 class="text-center">@Model.Title</h2>
+<hr />
+<div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">@Model.Questions[Model.QuestionNumber - 1].Content</h3>
+        </div>
+
+        <div class="panel-body">
+            <div id="radioGroup">
+                <div>
+                    <form>
+                        @for (int i = 0; i < 4; i++)
+                        {
+                            <div>
+                                <label for="@CurrentQuestion.Answers[i].Id">@CurrentQuestion.Answers[i].Content</label>
+                                <input type="radio" name="answers" checked="@CurrentQuestion.Answers[i].Checked" id="@CurrentQuestion.Answers[i].Id" value="@CurrentQuestion.Answers[i].IsCorrect" />
+                            </div>
+                        }
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="center-block">
+        <ul class="pagination">
+            @for (int i = 0; i < Model.Questions.Count; i++)
+            {
+                if (Model.QuestionNumber - 1 == i)
+                {
+                    <li class="active red">@Html.ActionLink($"{i + 1}", "TakeTest", "TestEngine", new { title = Model.Title, question = i + 1 }, new { @class = "btn btn-lg btn-info center-block page" })</li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink($"{i + 1}", "TakeTest", "TestEngine", new { title = Model.Title, question = i + 1 }, new { @class = "btn btn-lg btn-info center-block page" })</li>
+                }
+            }
+        </ul>
+    </div>
+    <div>
+        @if (Model.CompletedQuestions.Count == Model.Questions.Count)
+        {
+            <a id = "submit-btn" class = "btn btn-lg btn-success center-block">Submit</a>
+        }
+        else
+        {
+            <a id="submit-btn" class="btn btn-lg btn-success center-block disabled">@($"You have {Model.Questions.Count - Model.CompletedQuestions.Count} questions left")</a>
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $("input").change(function () {
+            var buttonId = $("input:checked").attr('id');
+            var buttonValue = $("input:checked").attr('data-value');
+            var dataToSend =  JSON.stringify({id: buttonId, title: "@Model.Title", question: @Model.QuestionNumber}, null, 2);
+            $.ajax({
+                url: '/TestEngine/SaveAnswer',
+                type: 'POST',
+                data: dataToSend,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    console.log($("#submit-btn").text());
+                    var totalQuestions = @Model.Questions.Count();
+                    var completedQuestions = @Model.CompletedQuestions.Count;
+
+                    if (totalQuestions == completedQuestions+1) {
+                        $("#submit-btn").text("Submit");
+                        $("#submit-btn").removeClass("disabled");
+                    }
+                    else if (totalQuestions > completedQuestions+1){
+                        $("#submit-btn").text("You have "+ @(Model.Questions.Count - Model.CompletedQuestions.Count-1) +" questions left");
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        })
+        $("#submit-btn").click(function () {
+            var dataToSend =  JSON.stringify({title: "@Model.Title"}, null, 2);
+            $.ajax({
+                url: '/TestEngine/SubmitTest',
+                type: 'POST',
+                data: dataToSend,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    $(location).attr('href',"/");
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        })
+    </script>
+}

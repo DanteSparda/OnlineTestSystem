@@ -1,0 +1,26 @@
+﻿@model  OnlineTestSystem.Web.ViewModels.Tests.TestCreateModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var questionModel = new OnlineTestSystem.Web.ViewModels.Tests.QuestionCreateModel();
+}
+
+<div>
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+</div>
+
+@using (Html.BeginForm("Create", "Tests", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <h2 class="text-center">Create your test</h2>
+    <div class="container">
+        <div class="form-group">
+            @Html.Label("Test title", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <br />
+    <input type="submit" id="submit" class="btn btn-success" value="Create Test" />
+}

@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{99FC36D3-D963-4263-BF69-8BD11F801E2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{8103CD5B-2A92-401C-A854-A31E0FD44DE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTestSystem.Data", "Data\OnlineTestSystem.Data\OnlineTestSystem.Data.csproj", "{7C950CDC-9587-4B65-A204-988EFED17948}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTestSystem.Data.Common", "Data\OnlineTestSystem.Data.Common\OnlineTestSystem.Data.Common.csproj", "{EDFE3C57-EF5B-4636-9ECC-D0BACA6B6379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTestSystem.Data.Models", "Data\OnlineTestSystem.Data.Models\OnlineTestSystem.Data.Models.csproj", "{048DF115-FAD9-4BD4-9BA0-D99DFD32A2B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTestSystem.Services.Data", "Services\OnlineTestSystem.Services.Data\OnlineTestSystem.Services.Data.csproj", "{90FE4C4D-122A-406D-8A40-79C561FB8184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTestSystem.Services.Web", "Services\OnlineTestSystem.Services.Web\OnlineTestSystem.Services.Web.csproj", "{DEAB17A2-58C1-448C-8A66-D49C3AF7FC6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTestSystem.Web", "Web\OnlineTestSystem.Web\OnlineTestSystem.Web.csproj", "{2D5A75C4-1655-42EC-8A7D-001260B7AF19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTestSystem.Web.Infrastructure", "Web\OnlineTestSystem.Web.Infrastructure\OnlineTestSystem.Web.Infrastructure.csproj", "{7F01684E-8259-47B7-BC11-B5805F26B559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTestSystem.Common", "OnlineTestSystem.Common\OnlineTestSystem.Common.csproj", "{701F322F-AA01-4DDC-90B6-6935981C1E73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C950CDC-9587-4B65-A204-988EFED17948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C950CDC-9587-4B65-A204-988EFED17948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C950CDC-9587-4B65-A204-988EFED17948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C950CDC-9587-4B65-A204-988EFED17948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFE3C57-EF5B-4636-9ECC-D0BACA6B6379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFE3C57-EF5B-4636-9ECC-D0BACA6B6379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFE3C57-EF5B-4636-9ECC-D0BACA6B6379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFE3C57-EF5B-4636-9ECC-D0BACA6B6379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{048DF115-FAD9-4BD4-9BA0-D99DFD32A2B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048DF115-FAD9-4BD4-9BA0-D99DFD32A2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048DF115-FAD9-4BD4-9BA0-D99DFD32A2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048DF115-FAD9-4BD4-9BA0-D99DFD32A2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90FE4C4D-122A-406D-8A40-79C561FB8184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90FE4C4D-122A-406D-8A40-79C561FB8184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90FE4C4D-122A-406D-8A40-79C561FB8184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90FE4C4D-122A-406D-8A40-79C561FB8184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAB17A2-58C1-448C-8A66-D49C3AF7FC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAB17A2-58C1-448C-8A66-D49C3AF7FC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAB17A2-58C1-448C-8A66-D49C3AF7FC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAB17A2-58C1-448C-8A66-D49C3AF7FC6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D5A75C4-1655-42EC-8A7D-001260B7AF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D5A75C4-1655-42EC-8A7D-001260B7AF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D5A75C4-1655-42EC-8A7D-001260B7AF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D5A75C4-1655-42EC-8A7D-001260B7AF19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F01684E-8259-47B7-BC11-B5805F26B559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F01684E-8259-47B7-BC11-B5805F26B559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F01684E-8259-47B7-BC11-B5805F26B559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F01684E-8259-47B7-BC11-B5805F26B559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C950CDC-9587-4B65-A204-988EFED17948} = {8103CD5B-2A92-401C-A854-A31E0FD44DE6}
+		{EDFE3C57-EF5B-4636-9ECC-D0BACA6B6379} = {8103CD5B-2A92-401C-A854-A31E0FD44DE6}
+		{048DF115-FAD9-4BD4-9BA0-D99DFD32A2B2} = {8103CD5B-2A92-401C-A854-A31E0FD44DE6}
+		{90FE4C4D-122A-406D-8A40-79C561FB8184} = {A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}
+		{DEAB17A2-58C1-448C-8A66-D49C3AF7FC6C} = {A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}
+		{2D5A75C4-1655-42EC-8A7D-001260B7AF19} = {99FC36D3-D963-4263-BF69-8BD11F801E2B}
+		{7F01684E-8259-47B7-BC11-B5805F26B559} = {99FC36D3-D963-4263-BF69-8BD11F801E2B}
+	EndGlobalSection
+EndGlobal
